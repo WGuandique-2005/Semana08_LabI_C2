@@ -1,7 +1,9 @@
 """
 * Ejercicio con PyQt5
 
-? Haremos una calculadora que puede realizar las operaciones básicas
+? Haremos una calculadora que puede realizar las operaciones básicas,
+? como suma, resta, multiplicación y división;
+* que permita seleccionar que se desea realizar con un combo box
 ! que tenga dos LineEdit que muestre el resultado en un label,
 todo usando PyQt5
 """
