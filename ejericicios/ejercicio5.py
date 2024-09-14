@@ -1,10 +1,12 @@
 """
 * Ejercicio 5
 
-? Contruir un programa que muestre una venata a traves la cual
-! se pueden leer 10 datos caracteristicos den una persona,
+? Contruir un programa que muestre una ventana a través de la cual
+! se pueden leer 10 datos característicos de una persona,
 todo\ usando PyQt5
 """
+
+# Se importan los módulos necesarios para crear una aplicación gráfica con PyQt5
 
 import sys
 from PyQt5.QtWidgets import (QApplication, QMainWindow, QLineEdit, QPushButton,
@@ -30,7 +32,7 @@ class myApp(QMainWindow):
         lbl_nacionalidad = QLabel("Escriba su nacionalidad:")
         self.txt_nacionalidad = QLineEdit()
         
-        lbl_genero = QLabel("Su genero:")
+        lbl_genero = QLabel("Su género:")
         self.combo_genero = QComboBox()
         self.combo_genero.addItem("Hombre cisgenero")
         self.combo_genero.addItem("Mujer cisgenero")
@@ -67,12 +69,14 @@ class myApp(QMainWindow):
         self.combo_rostro.addItem("Ovalado")
         self.combo_rostro.addItem("Alargado")
         
+        # Crear un botón para guardar los datos.
         self.btn_guardar = QPushButton("Guardar datos")
         self.btn_guardar.clicked.connect(self.clicked_btn)
         
+        # Crear un text edit para ver los datos
         self.txt_output = QTextEdit()
         
-        
+        # Añade todo al layout
         layout.addWidget(lbl1)
         layout.addWidget(lbl_nombre)
         layout.addWidget(self.txt_nombre)
@@ -98,12 +102,15 @@ class myApp(QMainWindow):
         layout.addWidget(self.btn_guardar)
         layout.addWidget(self.txt_output)
         
+        # Se hace que el layout sea el central widget
         center.setLayout(layout)
         self.setCentralWidget(center)
         
     def clicked_btn(self):
+        # Cree un cuadro de diálogo para preguntar al usuario si desea guardar los datos.
         respuesta, ok = QInputDialog.getItem(self, "Guardar datos", "¿Desea guardar los datos?", ["Sí", "No"], 0, False)
         if ok and respuesta == "Sí":
+            # Obtenerlos datos de los campos de entrada y crear una cadena
             datos = f"Nombre: {self.txt_nombre.text()}\n"
             datos += f"Apellido: {self.txt_apellido.text()}\n"
             datos += f"Nacionalidad: {self.txt_nacionalidad.text()}\n"
@@ -116,9 +123,10 @@ class myApp(QMainWindow):
             datos += f"Tipo de rostro: {self.combo_rostro.currentText()}\n"
             self.txt_output.setText(datos)
         else:
+            # Limpiar la salida si no se ingresa nada
             self.txt_output.setText("")
 
-# Creamos la aplicación
+# Create the application
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     ventana = myApp()
