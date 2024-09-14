@@ -5,6 +5,6 @@ INTEGRANTES
 WILLIAM JOSUE GUANDIQUE RIVERA
 <br>
 BRISEILY YAMILETH SOLORZANO HERNANDEZ
-<br>
 </center>
 _______________________________________
+
