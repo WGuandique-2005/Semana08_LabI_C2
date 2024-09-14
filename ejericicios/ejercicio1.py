@@ -32,7 +32,6 @@ class MyApp(QMainWindow):
         layout.addWidget(label)
         layout.setAlignment(Qt.AlignCenter)
         
-        # Se establece la etiqueta creada como el widget central de la ventana principal utilizando el método setCentralWidget
         center.setLayout(layout)
         self.setCentralWidget(center)
 
