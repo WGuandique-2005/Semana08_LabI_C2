@@ -27,6 +27,7 @@ class myAPP(QMainWindow):
         self.editxt.setEchoMode(QLineEdit.Password)
         self.btn = QPushButton("Ingresar")
         self.btn.clicked.connect(self.clicked_btn)
+        self.lbl = QLabel()
         
         central = QWidget()
         
@@ -37,6 +38,7 @@ class myAPP(QMainWindow):
         layout.addWidget(self.label)
         layout.addWidget(self.editxt)
         layout.addWidget(self.btn)
+        layout.addWidget(self.lbl)
         
         # Establecer el layout en el widget central
         central.setLayout(layout)
@@ -47,9 +49,11 @@ class myAPP(QMainWindow):
     def clicked_btn(self):
         # Obtener el texto ingresado en el campo de texto
         clave = self.editxt.text()
-        
+        if not clave:
+            self.lbl.setText("Ingrese una clave")
+        else:
         # Imprimir la clave en la consola
-        print(f"La clave es: {clave}")
+            print(f"La clave es: {clave}")
 
 # Crear una aplicación de PyQt5
 app = QApplication(sys.argv)
