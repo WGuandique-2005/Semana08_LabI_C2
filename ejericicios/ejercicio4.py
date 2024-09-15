@@ -10,7 +10,7 @@ __________________________________________________________
 """
 
 import sys
-from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QLineEdit, QPushButton, QVBoxLayout
+from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QLineEdit, QPushButton, QVBoxLayout, QTextEdit
 from PyQt5.QtCore import Qt # esta libreria es para la alineacion de texto
 
 class Ventana(QWidget):
@@ -60,6 +60,9 @@ class Ventana(QWidget):
         self.input_tipo3 = QLineEdit(self)
         self.input_tipo3.setText("Conejo")  # Tipo de animal 
         
+        # Mostrar los datos
+        self.txt_data = QTextEdit()
+        
         # Botón para mostrar los datos
         self.boton = QPushButton("Mostrar Datos", self)
         self.boton.clicked.connect(self.mostrar_datos)
@@ -88,6 +91,7 @@ class Ventana(QWidget):
         layout.addWidget(self.label_tipo3)
         layout.addWidget(self.input_tipo3)
         layout.addWidget(self.boton)
+        layout.addWidget(self.txt_data)
         
         # Asignar el layout a nuestra ventana
         self.setLayout(layout)
@@ -105,10 +109,12 @@ class Ventana(QWidget):
         edad3 = self.input_edad3.text()
         tipo3 = self.input_tipo3.text()
         
-        # Imprimir los datos de las mascotas
+        # Imprimir los datos de las mascotas (los datos que se muestran son un ejemplo, por eso se usa el setText() en los QLineEdit())
         print(f"Mascota 1 - Nombre: {nombre1}, Edad: {edad1}, Tipo: {tipo1}")
         print(f"Mascota 2 - Nombre: {nombre2}, Edad: {edad2}, Tipo: {tipo2}")
         print(f"Mascota 3 - Nombre: {nombre3}, Edad: {edad3}, Tipo: {tipo3}")
+        
+        self.txt_data.setText(f"Mascota 1 - Nombre: {nombre1}, Edad: {edad1}, Tipo: {tipo1}\nMascota 2 - Nombre: {nombre2}, Edad: {edad2}, Tipo: {tipo2}\nMascota 3 - Nombre: {nombre3}, Edad: {edad3}, Tipo: {tipo3}")
 
 # Creamos la aplicación
 if __name__ == "__main__":
