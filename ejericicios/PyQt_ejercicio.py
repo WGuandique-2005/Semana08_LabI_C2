@@ -6,12 +6,14 @@
 * que permita seleccionar que se desea realizar con un combo box
 ! que tenga dos LineEdit que muestre el resultado en un label,
 todo usando PyQt5
+
+! Con la utilización de <RadioButton> <ComboBox> <SpinBox> 
 """
 # Se importan los módulos necesarios para crear una aplicación gráfica con PyQt5
 
 import sys
-from PyQt5.QtWidgets import (QMainWindow, QApplication, QLineEdit, QLabel,
-                            QPushButton, QWidget, QVBoxLayout, QComboBox)
+from PyQt5.QtWidgets import (QMainWindow, QApplication, QLineEdit, QLabel, QDialog,
+                            QPushButton, QWidget, QVBoxLayout, QComboBox, QRadioButton)
 
 class myCalc(QMainWindow):
     def __init__(self):
@@ -45,7 +47,7 @@ class myCalc(QMainWindow):
         
         # Crear un botón para cerrar la aplicación
         self.exit = QPushButton("Cerrar")
-        self.exit.clicked.connect(exit)
+        self.exit.clicked.connect(self.clicked_exit)
         
         # Crear un widget central
         center = QWidget()
@@ -95,6 +97,31 @@ class myCalc(QMainWindow):
         except:
             # Mostrar un mensaje de error si se ingresa un valor inválido
             self.resp.setText("Error, ingrese valores válidos")
+            
+    def clicked_exit(self):
+        # Crear un dialogo de confirmación
+        confirm_dialog = QDialog()
+        confirm_dialog.setWindowTitle("Confirmar cierre")
+
+        label = QLabel("¿Está seguro de cerrar la aplicación?")
+        btn_yes = QRadioButton("Sí")
+        btn_no = QRadioButton("No")
+
+        # Set the initial checked state of the radio buttons
+        btn_no.setChecked(True)
+
+        btn_yes.clicked.connect(lambda: self.close(exit()))
+        btn_no.clicked.connect(lambda: confirm_dialog.reject())
+
+        layout = QVBoxLayout()
+        layout.addWidget(label)
+        layout.addWidget(btn_yes)
+        layout.addWidget(btn_no)
+
+        confirm_dialog.setLayout(layout)
+
+        if confirm_dialog.exec_() == QDialog.Accepted:
+            self.close()
 
 # Crear una aplicación
 app = QApplication(sys.argv)
