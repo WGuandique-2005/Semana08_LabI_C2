@@ -12,6 +12,7 @@ __________________________________________________________
 import sys
 from PyQt5.QtWidgets import (QApplication, QWidget, QLabel, QLineEdit,
                             QTextEdit, QPushButton, QVBoxLayout)
+from PyQt5.QtCore import Qt # esta libreria es para la alineacion de texto
 
 class Ventana(QWidget):
     def __init__(self):
@@ -25,9 +26,11 @@ class Ventana(QWidget):
         # Creamos los elementos de la interfaz
         self.label_cedula = QLabel("Número de Cédula:")
         self.input_cedula = QLineEdit(self)
+        self.label_cedula.setAlignment(Qt.AlignCenter) 
         
         self.label_nombre = QLabel("Nombre Completo:")
         self.input_nombre = QLineEdit(self)
+        self.label_nombre.setAlignment(Qt.AlignCenter) 
         
         # Comando para mostrar los datos
         self.txt_data = QTextEdit()
