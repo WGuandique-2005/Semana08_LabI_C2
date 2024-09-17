@@ -1,9 +1,12 @@
 """
-* Ejercicio 2
+Ejercicio 2
+_______________________________________________________________
 
-? Construir un programa que muestre una ventana y que lea
-! una clave secreta sin mostra los caracteres que la componen,
+CONSTRUIR UN PORGRAMA QUE MUESTRE UNA VENTANA Y QUE LEA UNA
+CLAVE SECRETA SIN MOSTRAR LOS CARACTERES QUE LA COMPONEN
 todo\ en PyQt5
+________________________________________________________________
+
 """
 
 # Se importan los módulos necesarios para crear una aplicación gráfica con PyQt5
