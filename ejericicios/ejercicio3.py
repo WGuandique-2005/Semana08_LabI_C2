@@ -22,13 +22,14 @@ class Ventana(QWidget):
         self.setWindowTitle("Formulario de Cédula y Nombre")
         self.setGeometry(100, 100, 300, 200)
         
-        # Creamos los elementos dde nuestra interfaz
+        # Creamos los elementos de la interfaz
         self.label_cedula = QLabel("Número de Cédula:")
         self.input_cedula = QLineEdit(self)
         
         self.label_nombre = QLabel("Nombre Completo:")
         self.input_nombre = QLineEdit(self)
         
+        # Comando para mostrar los datos
         self.txt_data = QTextEdit()
         self.boton = QPushButton("Mostrar Datos", self)
         
@@ -53,11 +54,11 @@ class Ventana(QWidget):
         nombre = self.input_nombre.text()
         
         if not cedula and not nombre:
-            self.txt_data.setText("Por favor ingrese su número de cédula y su nombre")
+            self.txt_data.setText("Por favor ingresar su número de cédula y su nombre: ")
         elif not cedula:
-            self.txt_data.setText("Por favor ingrese su número de cédula")
+            self.txt_data.setText("Por favor ingresar su número de cédula: ")
         elif not nombre:
-            self.txt_data.setText("Por favor ingrese su nombre completo")
+            self.txt_data.setText("Por favor ingresar su nombre completo: ")
         else:
             print(f"Cédula: {cedula}, Nombre Completo: {nombre}")
             self.txt_data.setText(f"Cédula: {cedula}\nNombre Completo: {nombre}")
@@ -69,5 +70,5 @@ if __name__ == "__main__":
     ventana = Ventana()
     ventana.show()
 
-    # Aqui cerramos la aplicacion
+    # Este comando nos cierra la aplicacion 
     sys.exit(app.exec_())
