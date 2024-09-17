@@ -26,15 +26,15 @@ class Ventana(QWidget):
         # Creamos los elementos de la interfaz
         self.label_cedula = QLabel("Número de Cédula:")
         self.input_cedula = QLineEdit(self)
-        self.label_cedula.setAlignment(Qt.AlignCenter) 
+        self.label_cedula.setAlignment(Qt.AlignCenter)  # comando para centrar el texto
         
         self.label_nombre = QLabel("Nombre Completo:")
         self.input_nombre = QLineEdit(self)
-        self.label_nombre.setAlignment(Qt.AlignCenter) 
+        self.label_nombre.setAlignment(Qt.AlignCenter)  # comando para centrar el texto
         
         # Comando para mostrar los datos
         self.txt_data = QTextEdit()
-        self.boton = QPushButton("Mostrar Datos", self)
+        self.boton = QPushButton("MOSTRAR LOS DATOS", self)
         
         # Conectamos el botón para la función que nos mostrara los datos
         self.boton.clicked.connect(self.mostrar_datos)
@@ -57,11 +57,11 @@ class Ventana(QWidget):
         nombre = self.input_nombre.text()
         
         if not cedula and not nombre:
-            self.txt_data.setText("Por favor ingresar su número de cédula y su nombre: ")
+            self.txt_data.setText("Por favor, ingresar su número de cédula y su nombre: ")
         elif not cedula:
-            self.txt_data.setText("Por favor ingresar su número de cédula: ")
+            self.txt_data.setText("Por favor, ingresar su número de cédula: ")
         elif not nombre:
-            self.txt_data.setText("Por favor ingresar su nombre completo: ")
+            self.txt_data.setText("Por favor, ingresar su nombre completo: ")
         else:
             print(f"Cédula: {cedula}, Nombre Completo: {nombre}")
             self.txt_data.setText(f"Cédula: {cedula}\nNombre Completo: {nombre}")
