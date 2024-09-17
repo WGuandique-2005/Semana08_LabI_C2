@@ -26,10 +26,10 @@ class Ventana(QWidget):
         self.label_mascota1.setAlignment(Qt.AlignCenter) 
         self.label_nombre1 = QLabel("Nombre:")
         self.input_nombre1 = QLineEdit(self)
-        self.input_nombre1.setText("Chispitas")  # Nombre 
+        self.input_nombre1.setText("Chispitas")  # Nombre de la mascota
         self.label_edad1 = QLabel("Edad:")
         self.input_edad1 = QLineEdit(self)
-        self.input_edad1.setText("5 meses")  # Edad 
+        self.input_edad1.setText("5 meses")  # Edad : meses o  años
         self.label_tipo1 = QLabel("Tipo de animal:")
         self.input_tipo1 = QLineEdit(self)
         self.input_tipo1.setText("Perro")  # Tipo de animal 
@@ -39,10 +39,10 @@ class Ventana(QWidget):
         self.label_mascota2.setAlignment(Qt.AlignCenter) 
         self.label_nombre2 = QLabel("Nombre:")
         self.input_nombre2 = QLineEdit(self)
-        self.input_nombre2.setText("Rubi")  # Nombre 
+        self.input_nombre2.setText("Rubi")  # Nombre de la mascota
         self.label_edad2 = QLabel("Edad:")
         self.input_edad2 = QLineEdit(self)
-        self.input_edad2.setText(" 2 años y 6 meses")  # Edad 
+        self.input_edad2.setText(" 2 años y 6 meses")  # Edad : meses o  años
         self.label_tipo2 = QLabel("Tipo de animal:")
         self.input_tipo2 = QLineEdit(self)
         self.input_tipo2.setText("Gata")  # Tipo de animal 
@@ -52,10 +52,10 @@ class Ventana(QWidget):
         self.label_mascota3.setAlignment(Qt.AlignCenter) 
         self.label_nombre3 = QLabel("Nombre:")
         self.input_nombre3 = QLineEdit(self)
-        self.input_nombre3.setText("Saltarina")  # Nombre 
+        self.input_nombre3.setText("Saltarina")  # Nombre de la mascota
         self.label_edad3 = QLabel("Edad:")
         self.input_edad3 = QLineEdit(self)
-        self.input_edad3.setText("1 años y 2 meses")  # Edad 
+        self.input_edad3.setText("1 años y 2 meses")  # Edad : meses o  años
         self.label_tipo3 = QLabel("Tipo de animal:")
         self.input_tipo3 = QLineEdit(self)
         self.input_tipo3.setText("Conejo")  # Tipo de animal 
@@ -67,7 +67,7 @@ class Ventana(QWidget):
         self.boton = QPushButton("Mostrar Datos", self)
         self.boton.clicked.connect(self.mostrar_datos)
         
-        # Creamos un layout vertical para almacenar los elementos
+        # Creamos un layout vertical para almacenar todos los elementos
         layout = QVBoxLayout()
         layout.addWidget(self.label_mascota1)
         layout.addWidget(self.label_nombre1)
@@ -93,7 +93,7 @@ class Ventana(QWidget):
         layout.addWidget(self.boton)
         layout.addWidget(self.txt_data)
         
-        # Asignar el layout a nuestra ventana
+        # Asignamos el layout a nuestra ventana
         self.setLayout(layout)
 
     def mostrar_datos(self):
@@ -109,7 +109,7 @@ class Ventana(QWidget):
         edad3 = self.input_edad3.text()
         tipo3 = self.input_tipo3.text()
         
-        # Imprimir los datos de las mascotas (los datos que se muestran son un ejemplo, por eso se usa el setText() en los QLineEdit())
+        # Imprimimos los datos de las mascotas (los datos que se muestran son un ejemplo, por eso se usa el setText() en los QLineEdit())
         print(f"Mascota 1 - Nombre: {nombre1}, Edad: {edad1}, Tipo: {tipo1}")
         print(f"Mascota 2 - Nombre: {nombre2}, Edad: {edad2}, Tipo: {tipo2}")
         print(f"Mascota 3 - Nombre: {nombre3}, Edad: {edad3}, Tipo: {tipo3}")
@@ -123,5 +123,5 @@ if __name__ == "__main__":
     ventana = Ventana()
     ventana.show()
     
-    # Aquí cerramos la aplicación
+    # Comando para cerrar la aplicacion
     sys.exit(app.exec_())
