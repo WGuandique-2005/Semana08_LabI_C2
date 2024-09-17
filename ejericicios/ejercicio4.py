@@ -1,11 +1,11 @@
 """
 Ejercicio 4
-__________________________________________________________
+________________________________________________________________________
 
 CONSTRUIR UN PROGRAMA QUE MUESTRE UNA VENTANA A TRAVEZ 
 DE LA CUAL SE PUEDA LEER TRES SATOS BASICOS DE 3 MASCOTAS DIFERENTES
 todo\ usando PyQt5
-__________________________________________________________
+_________________________________________________________________________
 
 """
 
@@ -21,8 +21,8 @@ class Ventana(QWidget):
         self.setWindowTitle("Datos de Mascotas")
         self.setGeometry(100, 100, 400, 400)
         
-        # Datos de la primera mascota
-        self.label_mascota1 = QLabel("--------------- MASCOTA 1 ---------------")
+        # Datos para la primera mascota
+        self.label_mascota1 = QLabel("---------------   MASCOTA 1   ---------------")
         self.label_mascota1.setAlignment(Qt.AlignCenter) 
         self.label_nombre1 = QLabel("Nombre:")
         self.input_nombre1 = QLineEdit(self)
@@ -34,8 +34,8 @@ class Ventana(QWidget):
         self.input_tipo1 = QLineEdit(self)
         self.input_tipo1.setText("Perro")  # Tipo de animal 
         
-        # Datos de la segunda mascota
-        self.label_mascota2 = QLabel("-------------- MASCOTA 2 ---------------")
+        # Datos para  la segunda mascota
+        self.label_mascota2 = QLabel("--------------   MASCOTA 2   ---------------")
         self.label_mascota2.setAlignment(Qt.AlignCenter) 
         self.label_nombre2 = QLabel("Nombre:")
         self.input_nombre2 = QLineEdit(self)
@@ -47,8 +47,8 @@ class Ventana(QWidget):
         self.input_tipo2 = QLineEdit(self)
         self.input_tipo2.setText("Gata")  # Tipo de animal 
         
-        # Datos de la tercera mascota
-        self.label_mascota3 = QLabel("-------------- MASCOTA 3 ---------------")
+        # Datos para la tercera mascota
+        self.label_mascota3 = QLabel("--------------   MASCOTA 3   ---------------")
         self.label_mascota3.setAlignment(Qt.AlignCenter) 
         self.label_nombre3 = QLabel("Nombre:")
         self.input_nombre3 = QLineEdit(self)
